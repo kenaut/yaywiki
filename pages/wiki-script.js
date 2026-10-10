@@ -25,8 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
             renderSidebarTree(treeData, navList); // 渲染左侧菜单（传入数据与父容器）
             initSearch();                        // 初始化搜索跳转
 
-            // 默认加载第一篇文章 (这里假设第一层有文件，或者你可以按需修改)
-            if (treeData.length > 0 && treeData[0].path) {
+            // 支持 URL ?page=xxx.md 直达指定文档（供主页"新人必读"等外部链接使用）
+            const requestedPage = new URLSearchParams(location.search).get('page');
+            if (requestedPage && pagesIndex.some(p => p.path === requestedPage)) {
+                jumpToPage(requestedPage);
+            } else if (treeData.length > 0 && treeData[0].path) {
+                // 默认加载第一篇文章 (这里假设第一层有文件，或者你可以按需修改)
                 loadMarkdown(treeData[0].path);
             }
         })

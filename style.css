@@ -4,7 +4,7 @@
 body {
     background-color: #01050a; /* 深邃暗黑背景 */
     color: #e2e8f0; /* 柔和的浅灰白色文字，保护视力 */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 现代无衬线字体 */
+    font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', Tahoma, Geneva, Verdana, sans-serif; /* 现代无衬线字体（含中文优化） */
     margin: 0;
     padding: 0;
     line-height: 1.6; /* 增加行高，提升阅读体验 */
@@ -82,4 +82,43 @@ body {
     color: #94a3b8;
     font-size: 16px;
     margin-top: -10px;
+}
+
+/* =========================================
+   新人必读精选卡片（沿用全站深色配色）
+   ========================================= */
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.quick-link {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px 18px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.quick-link strong {
+    color: #38bdf8;
+    font-size: 15px;
+}
+
+.quick-link span {
+    color: #94a3b8;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.quick-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #38bdf8;
+    transform: translateY(-2px);
 }
