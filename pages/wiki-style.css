@@ -154,3 +154,96 @@
 .folder-title.expanded::before {
     transform: rotate(90deg);
 }
+
+/* =========================================
+   搜索跳转（沿用侧边栏深色配色，不改变原有外观）
+   ========================================= */
+.wiki-search {
+    position: relative;
+    margin: 10px 0 16px;
+}
+
+#wiki-search-input {
+    width: 100%;
+    box-sizing: border-box;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    padding: 8px 10px;
+    color: #c9d1d9;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+#wiki-search-input:focus {
+    border-color: #58a6ff;
+}
+#wiki-search-input::placeholder {
+    color: #6e7681;
+}
+
+.wiki-search-results {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 4px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    max-height: 320px;
+    overflow-y: auto;
+    display: none;
+}
+.wiki-search-results.open {
+    display: block;
+}
+
+.wiki-search-results li a {
+    display: block;
+    padding: 7px 10px;
+    border-radius: 4px;
+    color: #c9d1d9;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.4;
+}
+.wiki-search-results li a:hover,
+.wiki-search-results li a.selected {
+    background-color: #30363d;
+    color: #ffffff;
+}
+
+.wiki-search-result-title {
+    display: block;
+}
+.wiki-search-result-path {
+    display: block;
+    font-size: 11px;
+    color: #8b949e;
+    margin-top: 2px;
+}
+.wiki-search-result-snippet {
+    display: block;
+    font-size: 12px;
+    color: #8b949e;
+    margin-top: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.wiki-search-result-snippet mark,
+.wiki-search-result-title mark {
+    background: transparent;
+    color: #58a6ff;
+    font-weight: bold;
+}
+.wiki-search-empty {
+    padding: 8px 10px;
+    font-size: 12px;
+    color: #8b949e;
+}

@@ -22,6 +22,11 @@
         <!-- 1. 左侧侧边栏：目录将由 JS 自动生成 -->
         <aside class="wiki-sidebar">
             <h3>目录导航</h3>
+            <!-- 搜索跳转：输入关键词后可快速跳转到对应页面 -->
+            <div class="wiki-search" id="wiki-search">
+                <input type="text" id="wiki-search-input" placeholder="搜索页面标题或内容..." autocomplete="off">
+                <ul id="wiki-search-results" class="wiki-search-results"></ul>
+            </div>
             <ul id="sidebar-nav" class="sidebar-nav">
                 <!-- JS 会自动填充这里 -->
             </ul>
@@ -36,6 +41,6 @@
     </div>
 
     <!-- 核心逻辑脚本 -->
-    <script src="./wiki-script.js"></script>
+    <script src="./wiki-script.js?v=2"></script>
 </body>
 </html>
